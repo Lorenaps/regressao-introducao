@@ -46,7 +46,16 @@ profs %>%
     geom_count()
 ```
 
+### Descrevendo relação entre o score e a idade, gênero e beleza média
 ```{r}
 
+modelo = lm(score ~ age + gender + bty_avg,
+            data = profs)
+
+tidy(modelo,
+     conf.level = 0.95,
+     conf.int = TRUE)
+
+glance(modelo)
 ```
 
